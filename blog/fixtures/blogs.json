@@ -1,0 +1,38 @@
+[
+    {
+        "model": "blog.Author",
+        "pk": 1,
+        "fields": {
+          "name": "Guido van Rossum",
+          "description": "Python Creator"
+        }
+    },
+    {
+        "model": "blog.Author",
+        "pk": 2,
+        "fields": {
+          "name": "Ijharul Islam",
+          "description": "Full stack developer."
+        }
+    },
+
+    {
+      "model": "blog.Blog",
+      "pk": 1,
+      "fields": {
+        "author_id": 2,
+        "title": "How to build graphql API with Django",
+        "body": "Piller"
+      }
+    },
+    {
+        "model": "blog.Blog",
+        "pk": 2,
+        "fields": {
+          "author_id": 2,
+          "title": "Graphql Data validation in Django",
+          "body": "Piller"
+        }
+    }
+  ]
+  
