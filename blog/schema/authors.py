@@ -41,7 +41,7 @@ class CreateAuthor(graphene.Mutation):
 
     ok = graphene.Boolean()
     author = graphene.Field(AuthorType)
-
+    
     @staticmethod
     def mutate(root, info, input):
         author = Author()
