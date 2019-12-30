@@ -1,5 +1,5 @@
-from .utils import FormValidator
-from .models import Blog, Author
+from .utils import FormValidator, BulkManager
+from .models import Blog, BlogTag, Author
 
 
 class CreateBlogForm(FormValidator):
@@ -32,4 +32,11 @@ class CreateBlogForm(FormValidator):
         for key, val in data.items():
             setattr(blog, key, val)
         blog.save()
+
+        BulkManager(
+            BlogTag,
+            data.tags,
+            update_dict={"blog_id": blog.id},
+            removed_items=data.deleted_tags,
+        )
         return blog

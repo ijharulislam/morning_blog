@@ -4,6 +4,7 @@ from graphene_django.types import DjangoObjectType, ObjectType
 from .authors import AuthorType
 from ..models import Blog
 from ..forms import CreateBlogForm
+from .blog_tags import BlogTagType, BlogTagInputType
 
 
 class BlogFields():
@@ -17,11 +18,14 @@ class BlogType(DjangoObjectType, BlogFields):
 
     id = graphene.ID(required=True)
     author = AuthorType()
+    blog_tags = BlogTagType()
 
 
 class BlogInputType(graphene.InputObjectType, BlogFields):
     id = graphene.ID()
     author_id = graphene.ID()
+    tags = graphene.List(BlogTagInputType)
+    deleted_tags = graphene.List(BlogTagInputType)
 
 
 class DeleteBlogInputType(graphene.InputObjectType):
