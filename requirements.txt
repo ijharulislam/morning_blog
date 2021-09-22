@@ -1,7 +1,7 @@
 aniso8601==7.0.0
 asgiref==3.2.3
 attrs==19.3.0
-Django==3.0.2
+Django==3.1.13
 django-graphql-jwt==0.3.0
 Faker==0.9.1
 graphene==2.1.8
